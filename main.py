@@ -25,6 +25,9 @@ xvar = np.var(x)
 yvar = np.var(y)
 zvar = np.var(z)
 
+
+
+#achman
 fig = plt.figure()
 ax = fig.add_subplot(projection='3d')
 ax.axis([14.34, 14.36, 51.94, 51.96, 4.18, 4.20])
@@ -33,7 +36,6 @@ ax.set_xlabel('x')
 ax.set_ylabel('y')
 ax.set_zlabel('z')
 plt.show()
-
 
 
 

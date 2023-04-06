@@ -1,28 +1,61 @@
 import numpy as np
 import matplotlib.pyplot as plt
+
+
+
 #import pandas as pd
 
 
-x1 = []
-y1 = []
-z1 = []
-length1 = []
-f = open("errormeasurement05042023.txt", 'r')
-for line in f:
-    x1.append(float(line.split(",")[0]))
-    y1.append(float(line.split(",")[1]))
-    z1.append(float(line.split(",")[2]))
-f.close()
+
+def OpenFile(filename):
+    x1 = []
+    y1 = []
+    z1 = []
+    length1 = []
+    f = open(filename, 'r')
+    for line in f:
+        x1.append(float(line.split(",")[0]))
+        y1.append(float(line.split(",")[1]))
+        z1.append(float(line.split(",")[2]))
+    f.close()
+    for i in range(0, len(x1)):
+        length1.append(np.sqrt(x1[i]*x1[i]+y1[i]*y1[i]+z1[i]*z1[i]))
+    return x1, y1, z1, length1
 
 
-for i in range(0, len(x1)):
-    length1.append(np.sqrt(x1[i]*x1[i]+y1[i]*y1[i]+z1[i]*z1[i]))
+DataMittwoch = OpenFile('errormeasurementMi.txt')
+DataDonnerstag = OpenFile('errormeasurementDo.txt')
+Datatotal = OpenFile('errormeasurement.txt')
 
-x = np.array(x1)
-y = np.array(y1)
-z = np.array(z1)
-length = np.array(length1)
+xMi = np.array(DataMittwoch[0])
+yMi = np.array(DataMittwoch[1])
+zMi = np.array(DataMittwoch[2])
+lengthMi = np.array(DataMittwoch[3])
 
+xDo = np.array(DataDonnerstag[0])
+yDo = np.array(DataDonnerstag[1])
+zDo = np.array(DataDonnerstag[2])
+lengthDo = np.array(DataDonnerstag[3])
+
+x = np.array(Datatotal[0])
+y = np.array(Datatotal[1])
+z = np.array(Datatotal[2])
+length = np.array(Datatotal[3])
+
+#print(xMi)
+#print(xDo)
+#print(x)
+
+
+xMiMean = np.mean(xMi)
+yMiMean = np.mean(yMi)
+zMiMean = np.mean(zMi)
+lengthMiMean = np.mean(lengthMi)
+
+xDoMean = np.mean(xDo)
+yDoMean = np.mean(yDo)
+zDoMean = np.mean(zDo)
+lengthDoMean = np.mean(lengthDo)
 
 xmean = np.mean(x)
 ymean = np.mean(y)
@@ -38,47 +71,51 @@ print('x', xmean, xvar)
 print('y', ymean, yvar)
 print('z', zmean, zvar)
 print('length', lengthmean, lengthvar)
-print(length)
+#print(length)
 
 
 
 
 #achman
-#fig = plt.figure(1)
-#ax = fig.add_subplot(projection='3d')
+fig = plt.figure(1)
+ax = fig.add_subplot(projection='3d')
 #ax.axis([14.34, 14.36, 51.94, 51.96, 4.18, 4.20])
-#ax.scatter(x, y, z, marker='o')
-#ax.scatter(xmean, ymean, zmean, marker='o', color='r')
-#ax.set_xlabel('x')
-#ax.set_ylabel('y')
-#ax.set_zlabel('z')
+ax.scatter(xMi, yMi, zMi, marker='o', label='Wednesday')
+ax.scatter(xDo, yDo, zDo, marker='o', color='mediumseagreen', label='Thursday')
+ax.scatter(xmean, ymean, zmean, label='mean', marker='o', color='r')
+ax.scatter(xMiMean, yMiMean, zMiMean, label='mean Wednesday',marker='o', color='midnightblue')
+ax.scatter(xDoMean, yDoMean, zDoMean, label='mean Thursday',marker='o', color='darkgreen')
+ax.set_xlabel('x')
+ax.set_ylabel('y')
+ax.set_zlabel('z')
+ax.legend(loc='best')
 #fig.show()
 
-fig2, ax2 = plt.subplots(1,3)
+#fig2, ax2 = plt.subplots(1,3)
 
 
-ax2[0].plot(x, y, 'o', label='xy')
-ax2[0].plot(xmean, ymean, 'o', color='r', label='mean')
-ax2[0].set_xlabel('x')
-ax2[0].set_ylabel('y')
-ax2[0].set_title('xy')
-ax2[0].legend(loc='best')
+#ax2[0].plot(x, y, 'o', label='xy')
+#ax2[0].plot(xmean, ymean, 'o', color='r', label='mean')
+#ax2[0].set_xlabel('x')
+#ax2[0].set_ylabel('y')
+#ax2[0].set_title('xy')
+#ax2[0].legend(loc='best')
 #ax2[0].set_aspect('equal', 'box')
 
-ax2[1].plot(y, z, 'o', label='yz')
-ax2[1].plot(ymean, zmean, 'o', color='r', label='mean')
-ax2[1].set_xlabel('y')
-ax2[1].set_ylabel('z')
-ax2[1].set_title('yz')
-ax2[1].legend(loc='best')
+#ax2[1].plot(y, z, 'o', label='yz')
+#ax2[1].plot(ymean, zmean, 'o', color='r', label='mean')
+#ax2[1].set_xlabel('y')
+#ax2[1].set_ylabel('z')
+#ax2[1].set_title('yz')
+#ax2[1].legend(loc='best')
 #ax2[1].set_aspect('equal', 'box')
 
-ax2[2].plot(z, x, 'o', label='zx')
-ax2[2].plot(zmean, xmean, 'o', color='r', label='mean')
-ax2[2].set_xlabel('z')
-ax2[2].set_ylabel('x')
-ax2[2].set_title('zx')
-ax2[2].legend(loc='best')
+#ax2[2].plot(z, x, 'o', label='zx')
+#ax2[2].plot(zmean, xmean, 'o', color='r', label='mean')
+#ax2[2].set_xlabel('z')
+#ax2[2].set_ylabel('x')
+#ax2[2].set_title('zx')
+#ax2[2].legend(loc='best')
 #ax2[2].set_aspect('equal', 'box')
 
 

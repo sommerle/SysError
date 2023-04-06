@@ -121,5 +121,3 @@ ax.legend(loc='best')
 
 #fig2.show()
 plt.show()
-
-#raw_input()

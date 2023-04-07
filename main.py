@@ -95,7 +95,6 @@ print('length', lengthmean, lengthvar)
 
 fig2, ax2 = plt.subplots(1,3)
 
-
 ax2[0].plot(xMi, yMi, 'o', label='Wednesday')
 ax2[0].plot(xDo, yDo, 'o', color='mediumseagreen', label='Thursday')
 ax2[0].plot(xmean, ymean, 'o', color='r', label='mean')

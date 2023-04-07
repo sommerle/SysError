@@ -80,8 +80,6 @@ print('length', lengthmean, lengthvar)
 
 
 
-
-#achman
 #fig = plt.figure(1)
 #ax = fig.add_subplot(projection='3d')
 #ax.scatter(xMi, yMi, zMi, marker='o', label='Wednesday')

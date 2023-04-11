@@ -48,6 +48,8 @@ length = np.array(Datatotal[3])
 #print(min(y))
 #print(max(y))
 
+
+
 #print(min(z))
 #print(max(z))
 

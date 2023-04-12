@@ -3,10 +3,6 @@ import matplotlib.pyplot as plt
 
 
 
-#import pandas as pd
-
-
-
 def OpenFile(filename):
     x1 = []
     y1 = []
@@ -23,39 +19,35 @@ def OpenFile(filename):
     return x1, y1, z1, length1
 
 
-Datatotal = OpenFile('errordist.txt')
-#DataMittwoch = OpenFile('errormeasurementMi.txt')
-#DataDonnerstag = OpenFile('errormeasurementDo.txt')
-#Datatotal = OpenFile('errormeasurement.txt')
+DataMittwoch = OpenFile('errormeasurementMi.txt')
+DataDonnerstag = OpenFile('errormeasurementDo.txt')
+Datatotal = OpenFile('errormeasurement.txt')
 
-#xMi = np.array(DataMittwoch[0])
-#yMi = np.array(DataMittwoch[1])
-#zMi = np.array(DataMittwoch[2])
-#lengthMi = np.array(DataMittwoch[3])
+xMi = np.array(DataMittwoch[0])
+yMi = np.array(DataMittwoch[1])
+zMi = np.array(DataMittwoch[2])
+lengthMi = np.array(DataMittwoch[3])
 
-#xDo = np.array(DataDonnerstag[0])
-#yDo = np.array(DataDonnerstag[1])
-#zDo = np.array(DataDonnerstag[2])
-#lengthDo = np.array(DataDonnerstag[3])
+xDo = np.array(DataDonnerstag[0])
+yDo = np.array(DataDonnerstag[1])
+zDo = np.array(DataDonnerstag[2])
+lengthDo = np.array(DataDonnerstag[3])
 
 x = np.array(Datatotal[0])
 y = np.array(Datatotal[1])
 z = np.array(Datatotal[2])
 length = np.array(Datatotal[3])
 
-print(min(x), max(x), max(x)-min(x))
-print(min(y), max(y), max(y)-min(y))
-print(min(z), max(z), max(z)-min(z))
 
-#xMiMean = np.mean(xMi)
-#yMiMean = np.mean(yMi)
-#zMiMean = np.mean(zMi)
-#lengthMiMean = np.mean(lengthMi)
+xMiMean = np.mean(xMi)
+yMiMean = np.mean(yMi)
+zMiMean = np.mean(zMi)
+lengthMiMean = np.mean(lengthMi)
 
-#xDoMean = np.mean(xDo)
-#yDoMean = np.mean(yDo)
-#zDoMean = np.mean(zDo)
-#lengthDoMean = np.mean(lengthDo)
+xDoMean = np.mean(xDo)
+yDoMean = np.mean(yDo)
+zDoMean = np.mean(zDo)
+lengthDoMean = np.mean(lengthDo)
 
 xmean = np.mean(x)
 ymean = np.mean(y)
@@ -75,53 +67,52 @@ lengthsigma = np.sqrt(lengthmean)
 
 
 
-#print('xMimean, sigma', xMiMean, np.sqrt(np.var(xMi)))
-#print('yMimean, sigma', yMiMean, np.sqrt(np.var(yMi)))
-#print('zMimean, sigma', zMiMean, np.sqrt(np.var(zMi)))
-#print('lengthMimean', lengthMiMean, np.sqrt(np.var(lengthMi)))
+print('xMimean, sigma', xMiMean, np.sqrt(np.var(xMi)))
+print('yMimean, sigma', yMiMean, np.sqrt(np.var(yMi)))
+print('zMimean, sigma', zMiMean, np.sqrt(np.var(zMi)))
+print('lengthMimean', lengthMiMean, np.sqrt(np.var(lengthMi)))
 
-#print('xDomean, sigma', xDoMean, np.sqrt(np.var(xDo)))
-##print('yDomean, sigma', yDoMean, np.sqrt(np.var(yDo)))
-#print('zDomean, sigma', zDoMean, np.sqrt(np.var(zDo)))
-#print('lengthDomean', lengthDoMean, np.sqrt(np.var(lengthDo)))
+print('xDomean, sigma', xDoMean, np.sqrt(np.var(xDo)))
+print('yDomean, sigma', yDoMean, np.sqrt(np.var(yDo)))
+print('zDomean, sigma', zDoMean, np.sqrt(np.var(zDo)))
+print('lengthDomean', lengthDoMean, np.sqrt(np.var(lengthDo)))
 
 print('xmean', xmean, np.sqrt(xvar))
 print('ymean', ymean, np.sqrt(yvar))
 print('zmean', zmean, np.sqrt(zvar))
 print('lengthmean', lengthmean, np.sqrt(lengthsigma))
 
-#print('xMimean/xDomean', xMiMean/xDoMean)
-#print('yMimean/yDomean', yMiMean/yDoMean)
-#print('zMimean/zDomean', zMiMean/zDoMean)
-#print('length: Mimean/Domean', lengthMiMean/lengthDoMean)
+print('xMimean/xDomean', xMiMean/xDoMean)
+print('yMimean/yDomean', yMiMean/yDoMean)
+print('zMimean/zDomean', zMiMean/zDoMean)
+print('length: Mimean/Domean', lengthMiMean/lengthDoMean)
 
 
 #print(length)
 
 
 
-#fig = plt.figure(1)
-#ax = fig.add_subplot(projection='3d')
-#ax.scatter(x, y, z, marker='o', label='absolute distance and moved')
-#ax.scatter(xMi, yMi, zMi, marker='o', label='Wednesday')
-#ax.scatter(xDo, yDo, zDo, marker='o', color='mediumseagreen', label='Thursday')
-#ax.scatter(xmean, ymean, zmean, label='mean', marker='o', color='r')
-#ax.scatter(xMiMean, yMiMean, zMiMean, label='mean Wednesday',marker='o', color='midnightblue')
-#ax.scatter(xDoMean, yDoMean, zDoMean, label='mean Thursday',marker='o', color='darkgreen')
-#ax.set_xlabel('x')
-#ax.set_ylabel('y')
-#ax.set_zlabel('z')
-#ax.legend(loc='best')
-
+fig = plt.figure(1)
+ax = fig.add_subplot(projection='3d')
+ax.scatter(x, y, z, marker='o', label='absolute distance and moved')
+ax.scatter(xMi, yMi, zMi, marker='o', label='Wednesday')
+ax.scatter(xDo, yDo, zDo, marker='o', color='mediumseagreen', label='Thursday')
+ax.scatter(xmean, ymean, zmean, label='mean', marker='o', color='r')
+ax.scatter(xMiMean, yMiMean, zMiMean, label='mean Wednesday',marker='o', color='midnightblue')
+ax.scatter(xDoMean, yDoMean, zDoMean, label='mean Thursday',marker='o', color='darkgreen')
+ax.set_xlabel('x')
+ax.set_ylabel('y')
+ax.set_zlabel('z')
+ax.legend(loc='best')
+#fig.plot()
 
 fig2, ax2 = plt.subplots(1,3)
 
-ax2[0].plot(x, y, 'o', label='absolute distance and moved')
-#ax2[0].plot(xMi, yMi, 'o', label='Wednesday')
-#ax2[0].plot(xDo, yDo, 'o', color='mediumseagreen', label='Thursday')
+ax2[0].plot(xMi, yMi, 'o', label='Wednesday')
+ax2[0].plot(xDo, yDo, 'o', color='mediumseagreen', label='Thursday')
 ax2[0].plot(xmean, ymean, 'o', color='r', label='mean')
-#ax2[0].plot(xMiMean, yMiMean, label='mean Wednesday', marker='o', color='midnightblue')
-#ax2[0].plot(xDoMean, yDoMean, label='mean Thursday', marker='o', color='darkgreen')
+ax2[0].plot(xMiMean, yMiMean, label='mean Wednesday', marker='o', color='midnightblue')
+ax2[0].plot(xDoMean, yDoMean, label='mean Thursday', marker='o', color='darkgreen')
 ax2[0].axis([np.min(x)-0.0005, np.max(x)+0.0005, np.min(y)-0.0005, np.max(y)+0.0005])
 ax2[0].set_xlabel('x')
 ax2[0].set_ylabel('y')
@@ -130,12 +121,11 @@ ax2[0].set_title('xy')
 #ax2[0].set_aspect('equal', 'box')
 
 
-ax2[1].plot(x, z, 'o', label='absolute distance and moved')
-#ax2[1].plot(xMi, zMi, 'o', label='Wednesday')
-#ax2[1].plot(xDo, zDo, 'o', color='mediumseagreen', label='Thursday')
+ax2[1].plot(xMi, zMi, 'o', label='Wednesday')
+ax2[1].plot(xDo, zDo, 'o', color='mediumseagreen', label='Thursday')
 ax2[1].plot(xmean, zmean, 'o', color='r', label='mean')
-#ax2[1].plot(xMiMean, zMiMean, label='mean Wednesday',marker='o', color='midnightblue')
-#ax2[1].plot(xDoMean, zDoMean, label='mean Thursday',marker='o', color='darkgreen')
+ax2[1].plot(xMiMean, zMiMean, label='mean Wednesday',marker='o', color='midnightblue')
+ax2[1].plot(xDoMean, zDoMean, label='mean Thursday',marker='o', color='darkgreen')
 ax2[1].axis([min(x)-0.0005, max(x)+0.0005, min(z)-0.0005, max(z)+0.0005])
 ax2[1].set_xlabel('x')
 ax2[1].set_ylabel('z')
@@ -144,19 +134,18 @@ ax2[1].set_title('xz')
 #ax2[1].set_aspect('equal', 'box')
 
 
-ax2[2].plot(y, z, 'o', label='absolute distance and moved')
-#ax2[2].plot(yMi, zMi, 'o', label='Wednesday')
-#ax2[2].plot(yDo, zDo, 'o', color='mediumseagreen', label='Thursday')
+ax2[2].plot(yMi, zMi, 'o', label='Wednesday')
+ax2[2].plot(yDo, zDo, 'o', color='mediumseagreen', label='Thursday')
 ax2[2].plot(xmean, ymean, 'o', color='r', label='mean')
-#ax2[2].plot(yMiMean, zMiMean, label='mean Wednesday',marker='o', color='midnightblue')
-#ax2[2].plot(yDoMean, zDoMean, label='mean Thursday',marker='o', color='darkgreen')
+ax2[2].plot(yMiMean, zMiMean, label='mean Wednesday',marker='o', color='midnightblue')
+ax2[2].plot(yDoMean, zDoMean, label='mean Thursday',marker='o', color='darkgreen')
 ax2[2].axis([min(y)-0.0005, max(y)+0.0005, min(z)-0.0005, max(z)+0.0005])
 ax2[2].set_xlabel('y')
 ax2[2].set_ylabel('z')
 ax2[2].set_title('yz')
 ax2[2].legend(loc='best')
 #ax2[2].set_aspect('equal', 'box')
-
+#fig2.plot()
 
 #fig2.show()
 plt.show()

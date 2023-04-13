@@ -1,4 +1,4 @@
-main2.pyimport numpy as np
+import numpy as np
 import matplotlib.pyplot as plt
 
 
@@ -20,7 +20,7 @@ def OpenFile(filename):
     return x1, y1, z1, length1
 
 
-Datatotal = OpenFile('errordist.txt')
+Datatotal = OpenFile('error_130423.txt')
 
 
 x = np.array(Datatotal[0])
@@ -96,5 +96,4 @@ ax2[2].legend(loc='best')
 #ax2[2].set_aspect('equal', 'box')
 
 
-#fig2.show()
 plt.show()

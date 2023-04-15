@@ -19,7 +19,7 @@ def OpenFile(filename):
     return x1, y1, z1, length1
 
 
-Datatotal = OpenFile('errormeasurement.txt')
+Datatotal = OpenFile('error_130423.txt')
 
 x = np.array(Datatotal[0])
 y = np.array(Datatotal[1])
@@ -56,7 +56,7 @@ print('lengthmean', lengthmean, np.sqrt(lengthsigma))
 
 fig2, ax2 = plt.subplots(1,3)
 
-ax2[0].hist(x, 10, label='x')
+ax2[0].hist(x, 20, label='x')
 ax2[0].set_xlabel('x')
 ax2[0].set_ylabel('')
 ax2[0].set_title('x histo')
@@ -64,13 +64,13 @@ ax2[0].set_title('x histo')
 #ax2[0].set_aspect('equal', 'box')
 
 
-ax2[1].hist(y, 10, label='y')
+ax2[1].hist(y, 20, label='y')
 ax2[1].set_xlabel('y')
 ax2[1].set_ylabel('')
 ax2[1].set_title('y histo')
 
 
-ax2[2].hist(z, 10, label='z')
+ax2[2].hist(z, 20, label='z')
 ax2[2].set_xlabel('z')
 ax2[2].set_ylabel('')
 ax2[2].set_title('z histo')

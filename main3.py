@@ -20,7 +20,7 @@ def OpenFile(filename):
     return x1, y1, z1, length1
 
 
-Datatotal = OpenFile('errorsys190423.txt')
+Datatotal = OpenFile('error_210423.txt')
 
 
 x = np.array(Datatotal[0])

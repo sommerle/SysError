@@ -94,7 +94,7 @@ print('length: Mimean/Domean', lengthMiMean/lengthDoMean)
 
 fig = plt.figure(1)
 ax = fig.add_subplot(projection='3d')
-ax.scatter(x, y, z, marker='o', label='absolute distance and moved')
+#ax.scatter(x, y, z, marker='o', label='absolute distance and moved')
 ax.scatter(xMi, yMi, zMi, marker='o', label='Wednesday')
 ax.scatter(xDo, yDo, zDo, marker='o', color='mediumseagreen', label='Thursday')
 ax.scatter(xmean, ymean, zmean, label='mean', marker='o', color='r')

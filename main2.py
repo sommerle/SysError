@@ -20,8 +20,13 @@ def OpenFile(filename):
     return x1, y1, z1, length1
 
 
-#Datatotal = OpenFile('errordist.txt')
+#Versuch1 = errormeasurement.txt
+#Versuch2 = errordist.txt
+#Versuch4 = errorsys190423.txt
+#Versuch5 = error_210423.txt
+
 Datatotal = OpenFile('error_210423.txt')
+#Datatotal = OpenFile('error_210423.txt')
 
 x = np.array(Datatotal[0])
 y = np.array(Datatotal[1])
@@ -56,7 +61,7 @@ print('lengthmean', lengthmean, np.sqrt(lengthsigma))
 
 fig = plt.figure(1)
 ax = fig.add_subplot(projection='3d')
-ax.scatter(x, y, z, marker='o', label='absolute value and moved')
+ax.scatter(x, y, z, marker='o', label='measurements')
 ax.scatter(xmean, ymean, zmean, label='mean', marker='o', color='r')
 ax.set_xlabel('x')
 ax.set_ylabel('y')

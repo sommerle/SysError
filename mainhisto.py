@@ -55,7 +55,7 @@ print('ysigma', ysigma)
 
 #print(length)
 
-fig2, ax2 = plt.subplots(1,3)
+fig2, ax2 = plt.subplots(1,4)
 
 ax2[0].hist(x, 10, label='x')
 ax2[0].set_xlabel('x')
@@ -75,6 +75,13 @@ ax2[2].hist(z, 10, label='z')
 ax2[2].set_xlabel('z')
 ax2[2].set_ylabel('')
 #ax2[2].set_title('z histo')
+
+ax2[3].hist(length, 10, label='sqrt(x^2+y^2+z^2)')
+ax2[3].set_xlabel('sqrt(x^2+y^2+z^2)')
+ax2[3].set_ylabel('')
+#ax2[2].set_title('z histo')
+
+
 
 #fig2.show()
 plt.show()

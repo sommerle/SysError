@@ -20,6 +20,8 @@ def OpenFile(filename):
 
 
 Datatotal = OpenFile('error_210423.txt')
+plt.rcParams.update({'font.size': 20})
+
 
 x = np.array(Datatotal[0])
 y = np.array(Datatotal[1])
@@ -52,10 +54,11 @@ print('lengthmean', lengthmean, np.sqrt(lengthsigma))
 
 print('xsigma', xsigma)
 print('ysigma', ysigma)
+print('zsigma', zsigma)
 
 #print(length)
 
-fig2, ax2 = plt.subplots(1,4)
+fig2, ax2 = plt.subplots(1,3)
 
 ax2[0].hist(x, 10, label='x')
 ax2[0].set_xlabel('x')
@@ -76,9 +79,9 @@ ax2[2].set_xlabel('z')
 ax2[2].set_ylabel('')
 #ax2[2].set_title('z histo')
 
-ax2[3].hist(length, 10, label='sqrt(x^2+y^2+z^2)')
-ax2[3].set_xlabel('sqrt(x^2+y^2+z^2)')
-ax2[3].set_ylabel('')
+#ax2[3].hist(length, 10, label='sqrt(x^2+y^2+z^2)')
+#ax2[3].set_xlabel('sqrt(x^2+y^2+z^2)')
+#ax2[3].set_ylabel('')
 #ax2[2].set_title('z histo')
 
 
